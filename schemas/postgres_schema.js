@@ -2,14 +2,15 @@ module.exports = {
     reviews: `CREATE TABLE reviews (
         review_id int NOT NULL,
         rating int,
-        summary char,
+        summary text,
         recommend boolean,
-        response char,
-        body char,
+        response text,
+        body text,
         date date,
-        reviewer_name char,
+        reviewer_name varchar(255),
+        reviewer_email varchar(255),
         helpfulness int,
-        product_id int,
+        product_id varchar(255),
         recommended_id int,
         characteristics_id int,
         PRIMARY KEY (review_id)
@@ -17,7 +18,7 @@ module.exports = {
 
     photos: `CREATE TABLE photos (
         id int NOT NULL,
-        url char,
+        url text,
         review_id int,
         PRIMARY KEY (id)
     )`,
@@ -34,7 +35,7 @@ module.exports = {
     )`,
 
     recommended: `CREATE TABLE recommended (
-        id int NOT NULL,
+        id int NOT NULL AUTO_INCREMENT,
         product_id int,
         "true" char,
         "false" char,

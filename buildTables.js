@@ -54,3 +54,7 @@ pool.query('DROP TABLE characteristics', (err, res) => {
     })
     console.log(err, res)
 })
+
+setTimeout(() => {
+    pool.end()
+}, 1000)
