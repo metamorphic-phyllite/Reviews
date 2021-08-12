@@ -24,21 +24,21 @@ module.exports = {
     )`,
 
     ratings: `CREATE TABLE ratings (
-        id int NOT NULL,
-        product_id int,
-        "1" char,
-        "2" char,
-        "3" char,
-        "4" char,
-        "5" char,
+        id serial NOT NULL,
+        product_id varchar(255),
+        "1" varchar(255),
+        "2" varchar(255),
+        "3" varchar(255),
+        "4" varchar(255),
+        "5" varchar(255),
         PRIMARY KEY (id)
     )`,
 
     recommended: `CREATE TABLE recommended (
-        id int NOT NULL AUTO_INCREMENT,
-        product_id int,
-        "true" char,
-        "false" char,
+        id serial NOT NULL,
+        product_id varchar(255),
+        "true" varchar(255),
+        "false" varchar(255),
         PRIMARY KEY (id)
     )`,
 
