@@ -1,25 +1,26 @@
 module.exports = {
     reviews: `CREATE TABLE reviews (
-        review_id int NOT NULL,
+        id int NOT NULL,
+        product_id varchar(255),
         rating int,
+        date varchar(255),
         summary text,
-        recommend boolean,
-        response text,
         body text,
-        date date,
+        recommend boolean,
+        reported boolean,
         reviewer_name varchar(255),
         reviewer_email varchar(255),
+        response text,
         helpfulness int,
-        product_id varchar(255),
         recommended_id int,
         characteristics_id int,
-        PRIMARY KEY (review_id)
+        PRIMARY KEY (id)
     )`,
 
     photos: `CREATE TABLE photos (
         id int NOT NULL,
-        url text,
         review_id int,
+        url text,
         PRIMARY KEY (id)
     )`,
 
@@ -53,8 +54,15 @@ module.exports = {
     characteristics: `CREATE TABLE characteristics (
         id int NOT NULL,
         product_id int,
-        name char,
-        average_value char,
+        name varchar(255),
+        average_value varchar(255),
         PRIMARY KEY (id)
-    )`
+    )`,
+
+    // characteristic_averages: `CREATE TABLE characteristic_averages (
+    //     id serial NOT NULL,
+    //     product_id int,
+    //     fit varchar(255),
+    //     length
+    // )`
 }
