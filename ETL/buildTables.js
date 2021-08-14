@@ -1,4 +1,4 @@
-const pool = require('./db.js');
+const pool = require('../db.js');
 const { reviews, photos, ratings, recommended, characteristic_reviews, characteristics } = require('./schemas/postgres_schema');
 
 

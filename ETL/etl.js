@@ -1,5 +1,5 @@
 const fs = require('fs');
-const pool = require('./db.js');
+const pool = require('../db.js');
 const parser = require('csv-parser');
 
 let reviewResults = [];

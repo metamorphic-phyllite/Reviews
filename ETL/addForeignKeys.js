@@ -1,4 +1,4 @@
-const pool = require('./db.js');
+const pool = require('../db.js');
 
 pool.query('ALTER TABLE characteristic_reviews ADD FOREIGN KEY (characteristic_id) REFERENCES characteristics(id)', (err, res) => {
     if (err) {
