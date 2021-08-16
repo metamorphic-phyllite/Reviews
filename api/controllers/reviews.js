@@ -37,16 +37,35 @@ exports.getReviews = async (req, res) => {
     .then((values) => {
         if (req.query.sort == "'newest'") {
             values.sort((a, b) => {
-                return b.date.getTime() - a.date.getTime()
+                return b.date.getTime() - a.date.getTime();
             })
             return values;
         } else if (req.query.sort === "'helpful'") {
             values.sort((a, b) => {
-                return b.helpfulness - a.helpfulness
+                return b.helpfulness - a.helpfulness;
             })
             return values
         } else if (req.query.sort === "'relevant'") {
-
+            let sortByDate = [...values];
+            let sortByHelpfulness = [...values];
+            sortByDate.sort((a, b) => {
+                return b.date.getTime() - a.date.getTime();
+            })
+            sortByHelpfulness.sort((a, b) => {
+                return b.helpfulness - a.helpfulness;
+            })
+            let sortByRelevance = [];
+            sortByDate.forEach((review) => {
+                let dateIndex = sortByDate.indexOf(review);
+                let helpfulnessIndex = sortByHelpfulness.indexOf(review);
+                sortByRelevance.push([dateIndex + helpfulnessIndex, review]);
+            })
+            sortByRelevance.sort((a, b) => {
+                return a[0] - b[0];
+            })
+            return sortByRelevance.map((review) => {
+                return review[1];
+            })
         }
     })
     .then((sortedValues) => {
