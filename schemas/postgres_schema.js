@@ -24,24 +24,24 @@ module.exports = {
         PRIMARY KEY (id)
     )`,
 
-    ratings: `CREATE TABLE ratings (
-        id serial NOT NULL,
-        product_id varchar(255),
-        "1" varchar(255),
-        "2" varchar(255),
-        "3" varchar(255),
-        "4" varchar(255),
-        "5" varchar(255),
-        PRIMARY KEY (id)
-    )`,
+    // ratings: `CREATE TABLE ratings (
+    //     id serial NOT NULL,
+    //     product_id varchar(255),
+    //     "1" varchar(255),
+    //     "2" varchar(255),
+    //     "3" varchar(255),
+    //     "4" varchar(255),
+    //     "5" varchar(255),
+    //     PRIMARY KEY (id)
+    // )`,
 
-    recommended: `CREATE TABLE recommended (
-        id serial NOT NULL,
-        product_id varchar(255),
-        "true" varchar(255),
-        "false" varchar(255),
-        PRIMARY KEY (id)
-    )`,
+    // recommended: `CREATE TABLE recommended (
+    //     id serial NOT NULL,
+    //     product_id varchar(255),
+    //     "true" varchar(255),
+    //     "false" varchar(255),
+    //     PRIMARY KEY (id)
+    // )`,
 
     characteristic_reviews: `CREATE TABLE characteristic_reviews (
         id int NOT NULL,
@@ -55,7 +55,6 @@ module.exports = {
         id int NOT NULL,
         product_id int,
         name varchar(255),
-        average_value varchar(255),
         PRIMARY KEY (id)
     )`,
 
