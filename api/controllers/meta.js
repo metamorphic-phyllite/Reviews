@@ -21,7 +21,6 @@ exports.getMetadata = async (req, res) => {
         let ratingData = await pool.query(
             `SELECT * FROM reviews WHERE product_id='${productId}'`
         );
-        console.log(ratingData.rows)
         let ratingsTally = {
             '1': 0,
             '2': 0,

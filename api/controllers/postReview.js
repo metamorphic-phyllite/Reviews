@@ -1,7 +1,6 @@
 const pool = require('../../db.js');
 
  exports.postReview = async (req, res) => {
-    console.log(req.body);
     let currentDate = Date.now().toString();
 
     let getMaxReviewId = await pool.query('SELECT * FROM reviews WHERE id=(SELECT MAX(id) FROM reviews)')
@@ -17,7 +16,6 @@ const pool = require('../../db.js');
     let values = [maxReviewId + 1, req.body.product_id.toString(), req.body.rating, currentDate, req.body.summary, req.body.body, req.body.recommend, false, req.body.name, req.body.email, 'null', 0];
     pool.query(text, values)
         .then((result) => {
-            console.log(result.rows[0]);
 
             req.body.photos.forEach(async (photo) => {
                 maxPhotoId = maxPhotoId + 1
