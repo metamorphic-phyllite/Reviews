@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon api/index.js"
+    "server": "nodemon api/index.js",
+    "pm2-start": "pm2 start api/index.js",
+    "pm2-stop": "pm2 stop api/index.js"
   },
   "repository": {
     "type": "git",
